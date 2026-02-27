@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>6767 Image Flash</title>
+  <style>
+    #flash-image {
+      display: none;
+      width: 200px; /* adjust as needed */
+    }
+  </style>
+</head>
+<body>
+  <input id="code-input" type="text" placeholder="Type here..." />
+
+  <br><br>
+  <img id="flash-image" src="image.png" alt="Flash Image">
+
+  <script>
+    const input = document.getElementById('code-input');
+    const img = document.getElementById('flash-image');
+
+    input.addEventListener('input', () => {
+      if (input.value === '6767') {
+        img.style.display = 'block';
+
+        // hide again after 500ms
+        setTimeout(() => {
+          img.style.display = 'none';
+          input.value = ''; // optional: clear input
+        }, 500);
+      }
+    });
+  </script>
+</body>
+</html>
